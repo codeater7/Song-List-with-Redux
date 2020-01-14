@@ -8,11 +8,11 @@ const songsReducer = () => {
 		{ title: 'I want you', duration: '2:35' },
 	];
 };
-const selectedSongReducer = (selectedSong = null, action) => {
+const selectedSongReducer = (selecteddSong = null, action) => {
 	if (action.type === 'SONG_SELECTED') {
 		return action.payload;
 	}
-	return selectedSong;
+	return selecteddSong;
 };
 
 export default combineReducers({
