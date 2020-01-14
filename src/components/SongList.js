@@ -4,7 +4,7 @@ import {selectSong} from '../actions'
 
 class SongList extends Component {
 	renderList() {
-		return this.props.songs.map(song => {
+		return this.props.songsss.map(song => {
 			return (
 				<div className="item" key={song.title}>
 					<div className="right floated content">
@@ -23,11 +23,14 @@ class SongList extends Component {
 		return <div className= "ui divided list"> {this.renderList()} </div>;
 	}
 }
-// going to state data from redux store and run some computation
-//By convention, it is called mapStateToProps
-const mapStateToProps = state => {
-	//this.props=== {songs:state.songs}
-	return { songs: state.songs };
+// to make data show up as props
+//PROPS ma aauxa //this.props=== {songs:state.songs}
+
+const mapStateToProps = (state) => {
+    console.log(state)
+    // songs is the name of prop we give 
+    // wonder what is songs, name given in combine reducers
+	return { songsss: state.songs };
 };
 export default connect(mapStateToProps, {selectSong:selectSong})(SongList);
 //connect returns the function ,
